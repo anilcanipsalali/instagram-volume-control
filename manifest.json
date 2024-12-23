@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram Volume Control",
+  "version": "1.0",
+  "description": "Control the volume of all Instagram videos.",
+  "permissions": ["storage", "scripting"],
+  "host_permissions": ["https://www.instagram.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.instagram.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
